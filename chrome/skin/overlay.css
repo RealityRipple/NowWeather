@@ -1,0 +1,22 @@
+#nowWeather-tb
+{
+ -moz-box-aign: center;
+}
+#nowWeather-icon
+{
+ margin-right: 3px;
+ max-height: 16px;
+ background-image: url('chrome://nowweather/skin/na.jpg');
+ background-repeat: no-repeat;
+ background-size: auto 16px;
+}
+#nowWeather-temp
+{
+ margin-top: 0;
+ margin-bottom: 0;
+}
+toolbar[iconsize="large"] #nowWeather-icon
+{
+ max-height: 24px;
+ background-size: auto 24px;
+}

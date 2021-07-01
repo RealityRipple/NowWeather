@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://nowweather/skin/page.css" type="text/css"?>
+<window xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="nowweather_page.init();"
+        id="nowWeatherPage"
+        title="NowWeather">
+ <keyset>
+  <key id="close_cmd" keycode="VK_ESCAPE" oncommand="window.close();" />
+ </keyset>
+ <iframe id="fraLogin" type="content-primary" flex="1"></iframe>
+ <script src="chrome://nowweather/content/page.js" />
+</window>

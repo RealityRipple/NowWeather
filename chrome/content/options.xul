@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://nowweather/skin/options.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://nowweather/locale/options.dtd">
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        id="nowWeatherOptionsWindow"
+        persist="screenX screenY"
+        title="&window-title;"
+        buttons="accept, cancel"
+        onload="nowweather_options.init();"
+        onunload="nowweather_options.closeWindow();"
+        ondialogaccept="return nowweather_options.save();">
+ <script type="application/x-javascript" src="chrome://nowweather/content/api.js" />
+ <script type="application/x-javascript" src="chrome://nowweather/content/options.js" />
+  <vbox flex="1">
+   <groupbox orient="vertical">
+    <caption label="&location-box-label;" />
+    <radiogroup id="locationGroup">
+     <hbox>
+      <radio id="locationCoord" value="coord" label="&coord-description;" oncommand="nowweather_options.toggleLocation('coord');" />
+      <panel id="locationList" type="autocomplete" noautofocus="true" />
+      <textbox id="locationInput" flex="1" type="autocomplete" autocompletesearch="locationAutocomplete" autocompletepopup="locationList" completedefaultindex="true" completeselectedindex="true" />
+      <button id="locationAuto" oncommand="nowweather_options.getGeoData();">Auto</button>
+     </hbox>
+     <hbox>
+      <radio id="locationGeo" value="geo" label="&geo-description;" oncommand="nowweather_options.toggleLocation('geo');" />
+      <spacer flex="1" />
+     </hbox>
+    </radiogroup>
+   </groupbox>
+   <hbox flex="1">
+    <groupbox flex="1">
+     <caption label="&unittype-box-label;" />
+     <radiogroup id="unittypeGroup">
+      <vbox flex="1">
+       <spacer flex="1" />
+       <radio id="unittypeStandard" value="e" label="&unittype-standard-label;" />
+       <spacer flex="1" />
+       <radio id="unittypeMetric" value="m" label="&unittype-metric-label;" />
+       <spacer flex="1" />
+      </vbox>
+     </radiogroup>
+    </groupbox>
+    <groupbox flex="1">
+     <caption label="&refresh-box-label;" />
+     <vbox flex="1">
+      <spacer flex="1" />
+      <hbox align="baseline">
+       <spacer flex="1" />
+       <textbox id="refreshHours" size="4" maxlength="2" type="number" min="1" max="24" increment="1" />
+       <description>&refresh-hours-label;</description>
+      </hbox>
+      <spacer flex="1" />
+     </vbox>
+    </groupbox>
+   </hbox>
+   <spacer flex="1" />
+  </vbox>
+</dialog>

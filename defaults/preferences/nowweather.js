@@ -1,0 +1,9 @@
+pref("extensions.{854AD0C3-C26C-52D1-87A6-BE2803842834}.description", "chrome://nowweather/locale/nowweather.properties");
+pref("extensions.nowweather.interval", 1);
+pref("extensions.nowweather.unittype", "e");
+pref("extensions.nowweather.latitude", "199");
+pref("extensions.nowweather.longitude", "199");
+pref("extensions.nowweather.geolocate", false);
+pref("extensions.nowweather.websiteUrl", "https://forecast.weather.gov/MapClick.php?lon=%LONGITUDE%&lat=%LATITUDE%");
+pref("extensions.nowweather.websiteWidth", 730);
+pref("extensions.nowweather.websiteHeight", 580);

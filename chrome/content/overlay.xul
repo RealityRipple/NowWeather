@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://nowweather/skin/overlay.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://nowweather/locale/overlay.dtd">
+<overlay id="nowweatherOverlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+ <script type="application/x-javascript" src="chrome://nowweather/content/api.js" />
+ <script type="application/x-javascript" src="chrome://nowweather/content/overlay.js" />
+ <toolbarpalette id="BrowserToolbarPalette">
+  <toolbaritem id="nowWeather-tb" title="&toolbaritem.label;"/>
+ </toolbarpalette>
+ <popupset id="mainPopupSet">
+  <menupopup id="nowWeatherMenu">
+   <menuitem label="&menu-refresh-label;" accesskey="&menu-refresh-accesskey;" oncommand="nowweather_shared.initiateWeather(); return false;" />
+   <menuitem label="&menu-website-label;" accesskey="&menu-website-accesskey;" oncommand="nowweather.openWebsite(); return false;" />
+   <menuseparator />
+   <menuitem label="&menu-options-label;" accesskey="&menu-options-accesskey;" oncommand="window.openDialog('chrome://nowweather/content/options.xul', 'nowweatherOptions', 'chrome,dependent,modal');" />
+  </menupopup>
+ </popupset>
+ <toolbaritem id="nowWeather-tb" removable="true" context="nowWeatherMenu">
+  <vbox>
+   <spacer flex="1" />
+   <image id="nowWeather-icon" src="chrome://nowweather/skin/na.jpg" />
+   <spacer flex="1" />
+  </vbox>
+  <vbox>
+   <spacer flex="1" />
+   <description crop="end" id="nowWeather-temp">. . .</description>
+   <spacer flex="1" />
+  </vbox>
+ </toolbaritem>
+</overlay>

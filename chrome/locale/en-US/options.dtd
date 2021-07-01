@@ -1,0 +1,9 @@
+<!ENTITY window-title "NowWeather Options">
+<!ENTITY location-box-label "Location">
+<!ENTITY coord-description "Manual Location:">
+<!ENTITY geo-description "Automatic Geolocation">
+<!ENTITY refresh-box-label "Refresh every">
+<!ENTITY refresh-hours-label "hour(s)">
+<!ENTITY unittype-box-label "Units of Measure">
+<!ENTITY unittype-standard-label "U.S. Standard">
+<!ENTITY unittype-metric-label "Metric">

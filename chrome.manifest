@@ -1,0 +1,8 @@
+content nowweather       chrome/content/
+locale  nowweather en-US chrome/locale/en-US/
+skin    nowweather skin  chrome/skin/
+overlay chrome://browser/content/browser.xul chrome://nowweather/content/overlay.xul
+style   chrome://global/content/customizeToolbar.xul chrome://nowweather/skin/overlay.css
+resource nowweather modules/
+component {6E471427-92A1-4665-8FF5-1343BEC5B1D5} components/locationAutocomplete.js
+contract @mozilla.org/autocomplete/search;1?name=locationAutocomplete {6E471427-92A1-4665-8FF5-1343BEC5B1D5}
