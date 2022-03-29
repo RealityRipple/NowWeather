@@ -3,7 +3,7 @@
  <Description about="urn:mozilla:install-manifest">
   <em:name>NowWeather</em:name>
   <em:id>{854AD0C3-C26C-52D1-87A6-BE2803842834}</em:id>
-  <em:version>30.0</em:version>
+  <em:version>30.29</em:version>
   <em:type>2</em:type>
   <em:targetApplication>
    <Description>
