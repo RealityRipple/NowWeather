@@ -79,8 +79,14 @@ var nowweather =
   }
   if (bestT > -1)
   {
-   document.getElementById('nowWeather-temp').innerHTML = nowweather_shared.current_weather[bestT].temp;
-   document.getElementById('nowWeather-icon').setAttribute('src', nowweather_shared.current_weather[bestT].icon);
+   if (nowweather_shared.current_weather[bestT].hasOwnProperty('temp'))
+    document.getElementById('nowWeather-temp').innerHTML = nowweather_shared.current_weather[bestT].temp;
+   else
+    document.getElementById('nowWeather-temp').innerHTML = '. . .';
+   if (nowweather_shared.current_weather[bestT].hasOwnProperty('icon'))
+    document.getElementById('nowWeather-icon').setAttribute('src', nowweather_shared.current_weather[bestT].icon);
+   else
+    document.getElementById('nowWeather-icon').setAttribute('src', 'chrome://nowweather/skin/na.jpg');
   }
   return true;
  },
