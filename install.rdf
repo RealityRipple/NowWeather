@@ -3,13 +3,13 @@
  <Description about="urn:mozilla:install-manifest">
   <em:name>NowWeather</em:name>
   <em:id>{854AD0C3-C26C-52D1-87A6-BE2803842834}</em:id>
-  <em:version>32.0</em:version>
+  <em:version>33.0</em:version>
   <em:type>2</em:type>
   <em:targetApplication>
    <Description>
     <em:id>{8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}</em:id>
-    <em:minVersion>32.0</em:minVersion>
-    <em:maxVersion>32.*</em:maxVersion>
+    <em:minVersion>33.0</em:minVersion>
+    <em:maxVersion>33.*</em:maxVersion>
    </Description>
   </em:targetApplication>
   <em:description>Current weather provided by the National Digital Forecast Database.</em:description>
