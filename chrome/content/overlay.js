@@ -72,6 +72,7 @@ var nowweather =
   let nowUT = new Date();
   let nowEH = Math.floor(nowUT.valueOf() / (1000 * 60 * 60));
   let bestT = -1;
+  let report = "";
   for (t in nowweather_shared.current_weather)
   {
    if (Math.abs(t - nowEH) < Math.abs(bestT - nowEH))
@@ -79,15 +80,42 @@ var nowweather =
   }
   if (bestT > -1)
   {
-   if (nowweather_shared.current_weather[bestT].hasOwnProperty('temp'))
-    document.getElementById('nowWeather-temp').innerHTML = nowweather_shared.current_weather[bestT].temp;
-   else
-    document.getElementById('nowWeather-temp').innerHTML = '. . .';
+   report += nowweather_shared.current_weather[bestT].temp.toString() + " Now";
    if (nowweather_shared.current_weather[bestT].hasOwnProperty('icon'))
     document.getElementById('nowWeather-icon').setAttribute('src', nowweather_shared.current_weather[bestT].icon);
    else
     document.getElementById('nowWeather-icon').setAttribute('src', 'chrome://nowweather/skin/na.jpg');
   }
+
+  let tempDate = new Date();
+  tempDate.setHours(0,0,0,0);
+  const days = [ "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" ];
+  let currentDay = tempDate.getDay();
+  let currentStart = tempDate.getTime() / (1000 * 60 * 60);
+  for (let i=0; i<8; i++) {
+   let currentEnd = currentStart + 24;
+   let low = 200;
+   let high = -200;
+   for (t in nowweather_shared.current_weather)
+   {
+    let degrees = parseInt(nowweather_shared.current_weather[t].temp.toString().split('°')[0]);
+    if (t >= currentStart && t <= currentEnd)
+    {
+     if (degrees < low)
+      low = degrees;
+     if (degrees > high)
+      high = degrees;
+    }
+   }
+
+   report += " / " + high + ' ' + days[currentDay] + ' Hi';
+   report += " / " + low + ' ' + days[currentDay] + ' Lo';
+   currentDay++;
+   currentDay%=7;
+   currentStart = currentEnd;
+  }
+  
+  document.getElementById('nowWeather-temp').innerHTML = report;
   return true;
  },
  openWebsite: async function()
